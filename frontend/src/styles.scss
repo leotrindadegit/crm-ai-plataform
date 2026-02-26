@@ -26,10 +26,13 @@
   --workspace-bg: linear-gradient(180deg, var(--panel) 0%, #eef2fa 100%);
   --topbar-bg: rgba(255, 255, 255, 0.72);
   --topbar-tab-text: #535d70;
+  --topbar-tab-active-text: #ffffff;
   --action-bg: #ffffff;
   --action-text: #101724;
   --avatar-bg: #101724;
   --avatar-text: #ffffff;
+  --card-bg: linear-gradient(180deg, #ffffff 0%, #f8faff 100%);
+  --card-shadow: 0 10px 24px rgba(24, 35, 56, 0.06);
 }
 
 * {
@@ -72,10 +75,13 @@ body.dark-theme {
   --workspace-bg: linear-gradient(180deg, #1b2333 0%, #151c2a 100%);
   --topbar-bg: rgba(20, 29, 44, 0.75);
   --topbar-tab-text: #c3cee2;
+  --topbar-tab-active-text: #0f1726;
   --action-bg: #1b2435;
   --action-text: #e6ecf8;
   --avatar-bg: #ffffff;
   --avatar-text: #111827;
+  --card-bg: linear-gradient(180deg, #1f2a3d 0%, #1a2333 100%);
+  --card-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
   background:
     radial-gradient(1200px 500px at 85% 0%, #1f2a3f 0%, transparent 65%),
     linear-gradient(165deg, #0f1420 0%, #0b111a 100%);
@@ -119,11 +125,12 @@ p {
 }
 
 .card {
-  background: linear-gradient(180deg, #ffffff 0%, #f8faff 100%);
+  background: var(--card-bg);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   padding: 1rem;
-  box-shadow: 0 10px 24px rgba(24, 35, 56, 0.06);
+  box-shadow: var(--card-shadow);
+  color: var(--text);
 }
 
 .card--wide {

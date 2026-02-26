@@ -2,7 +2,7 @@
   min-height: 220px;
   border: 1px solid var(--line);
   border-radius: 1rem;
-  background: #f8faff;
+  background: var(--card-bg);
   display: grid;
   place-items: center;
 }
@@ -11,5 +11,5 @@
   margin: 0;
   font-size: 1.05rem;
   font-weight: 600;
-  color: #4f5b70;
+  color: var(--text);
 }

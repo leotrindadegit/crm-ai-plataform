@@ -223,7 +223,7 @@
 .topbar__tabs a.is-active,
 .topbar__tabs a:hover {
   background: var(--accent);
-  color: var(--rail-active-text);
+  color: var(--topbar-tab-active-text);
 }
 
 .topbar__actions {
@@ -252,6 +252,7 @@
 
 .workspace__content {
   padding: 1.2rem;
+  color: var(--text);
 }
 
 @media (max-width: 980px) {
