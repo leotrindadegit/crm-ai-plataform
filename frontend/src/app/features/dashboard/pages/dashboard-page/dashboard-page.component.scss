@@ -1,58 +1,15 @@
-.dashboard {
-  gap: 1rem;
-}
-
-.journey-board {
-  background: linear-gradient(180deg, #f9fbff 0%, #f2f6ff 100%);
+.dashboard-placeholder {
+  min-height: 220px;
   border: 1px solid var(--line);
-  border-radius: 1.1rem;
-  padding: 1rem;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.75rem;
-}
-
-.journey-card {
-  background: var(--surface);
-  border: 1px solid #e4e9f2;
   border-radius: 1rem;
-  padding: 0.9rem;
-}
-
-.journey-card h3 {
-  font-size: 0.86rem;
-  margin: 0;
-}
-
-.journey-card ul {
-  margin: 0.65rem 0 0;
-  padding-left: 1rem;
-  color: var(--muted);
+  background: #f8faff;
   display: grid;
-  gap: 0.35rem;
-  font-size: 0.8rem;
+  place-items: center;
 }
 
-.journey-card--focus {
-  background: #101724;
-  color: #ffffff;
-  border-color: #101724;
-}
-
-.journey-card--focus p {
-  margin-top: 0.6rem;
-  color: #dbe6ff;
-  font-size: 0.82rem;
-}
-
-@media (max-width: 1100px) {
-  .journey-board {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 700px) {
-  .journey-board {
-    grid-template-columns: 1fr;
-  }
+.dashboard-placeholder p {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #4f5b70;
 }

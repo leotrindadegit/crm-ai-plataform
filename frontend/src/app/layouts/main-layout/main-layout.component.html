@@ -1,10 +1,13 @@
 <div class="shell" [class.shell--expanded]="isRailExpanded()">
   <aside class="rail">
-    <div class="rail__logo">crm</div>
-    <button class="rail__toggle" type="button" (click)="toggleRail()" [title]="isRailExpanded() ? 'Reduzir menu' : 'Ampliar menu'">
-      <i class="fa-solid fa-chevron-right icon" [class.is-hidden]="isRailExpanded()" aria-hidden="true"></i>
-      <i class="fa-solid fa-chevron-left icon" [class.is-hidden]="!isRailExpanded()" aria-hidden="true"></i>
-    </button>
+    <div class="rail__brand">
+      <div class="rail__logo rail__logo--compact">crm</div>
+      <div class="rail__logo rail__logo--expanded">CRM AI Plataforma</div>
+      <button class="rail__toggle" type="button" (click)="toggleRail()" [title]="isRailExpanded() ? 'Reduzir menu' : 'Ampliar menu'">
+        <i class="fa-solid fa-chevron-right icon" [class.is-hidden]="isRailExpanded()" aria-hidden="true"></i>
+        <i class="fa-solid fa-chevron-left icon" [class.is-hidden]="!isRailExpanded()" aria-hidden="true"></i>
+      </button>
+    </div>
 
     <nav class="rail__menu">
       <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }" title="Dashboard">
@@ -36,32 +39,29 @@
         <span class="rail__label">Configuracoes</span>
       </a>
     </nav>
-
-    <div class="rail__controls">
-      <button class="rail__theme" type="button" title="Tema">
-        <i class="fa-solid fa-circle-half-stroke icon" aria-hidden="true"></i>
-      </button>
-    </div>
   </aside>
 
   <section class="workspace">
     <header class="topbar">
       <div class="topbar__brand">
-        <strong>sugarcrm</strong>
-        <span>Customer Journeys</span>
+        <strong>Plataforma CRM</strong>
       </div>
 
       <nav class="topbar__tabs">
-        <a routerLink="/clientes" routerLinkActive="is-active">Relationship</a>
-        <a routerLink="/oportunidades" routerLinkActive="is-active">Opportunities</a>
+        <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
+        <a routerLink="/clientes" routerLinkActive="is-active">Clientes</a>
         <a routerLink="/leads" routerLinkActive="is-active">Leads</a>
-        <a routerLink="/tarefas" routerLinkActive="is-active">Calendar</a>
-        <a routerLink="/relatorios" routerLinkActive="is-active">Reports</a>
+        <a routerLink="/oportunidades" routerLinkActive="is-active">Oportunidades</a>
+        <a routerLink="/tarefas" routerLinkActive="is-active">Tarefas</a>
+        <a routerLink="/relatorios" routerLinkActive="is-active">Relatorios</a>
       </nav>
 
       <div class="topbar__actions">
         <button type="button" title="Criar"><i class="fa-solid fa-plus icon icon--small" aria-hidden="true"></i></button>
         <button type="button" title="Pesquisar"><i class="fa-solid fa-magnifying-glass icon icon--small" aria-hidden="true"></i></button>
+        <button type="button" [title]="theme() === 'dark' ? 'Ativar tema claro' : 'Ativar tema escuro'" (click)="toggleTheme()">
+          <i class="fa-solid icon icon--small" [class.fa-moon]="theme() === 'light'" [class.fa-sun]="theme() === 'dark'" aria-hidden="true"></i>
+        </button>
         <div class="avatar">A</div>
       </div>
     </header>
