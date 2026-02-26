@@ -1,0 +1,73 @@
+<div class="shell" [class.shell--expanded]="isRailExpanded()">
+  <aside class="rail">
+    <div class="rail__logo">crm</div>
+    <button class="rail__toggle" type="button" (click)="toggleRail()" [title]="isRailExpanded() ? 'Reduzir menu' : 'Ampliar menu'">
+      <i class="fa-solid fa-chevron-right icon" [class.is-hidden]="isRailExpanded()" aria-hidden="true"></i>
+      <i class="fa-solid fa-chevron-left icon" [class.is-hidden]="!isRailExpanded()" aria-hidden="true"></i>
+    </button>
+
+    <nav class="rail__menu">
+      <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }" title="Dashboard">
+        <i class="fa-solid fa-table-cells-large icon" aria-hidden="true"></i>
+        <span class="rail__label">Dashboard</span>
+      </a>
+      <a routerLink="/clientes" routerLinkActive="is-active" title="Clientes">
+        <i class="fa-solid fa-users icon" aria-hidden="true"></i>
+        <span class="rail__label">Clientes</span>
+      </a>
+      <a routerLink="/leads" routerLinkActive="is-active" title="Leads">
+        <i class="fa-solid fa-bullseye icon" aria-hidden="true"></i>
+        <span class="rail__label">Leads</span>
+      </a>
+      <a routerLink="/oportunidades" routerLinkActive="is-active" title="Oportunidades">
+        <i class="fa-solid fa-arrow-trend-up icon" aria-hidden="true"></i>
+        <span class="rail__label">Oportunidades</span>
+      </a>
+      <a routerLink="/tarefas" routerLinkActive="is-active" title="Tarefas">
+        <i class="fa-solid fa-circle-check icon" aria-hidden="true"></i>
+        <span class="rail__label">Tarefas</span>
+      </a>
+      <a routerLink="/relatorios" routerLinkActive="is-active" title="Relatorios">
+        <i class="fa-solid fa-chart-column icon" aria-hidden="true"></i>
+        <span class="rail__label">Relatorios</span>
+      </a>
+      <a routerLink="/configuracoes" routerLinkActive="is-active" title="Configuracoes">
+        <i class="fa-solid fa-gear icon" aria-hidden="true"></i>
+        <span class="rail__label">Configuracoes</span>
+      </a>
+    </nav>
+
+    <div class="rail__controls">
+      <button class="rail__theme" type="button" title="Tema">
+        <i class="fa-solid fa-circle-half-stroke icon" aria-hidden="true"></i>
+      </button>
+    </div>
+  </aside>
+
+  <section class="workspace">
+    <header class="topbar">
+      <div class="topbar__brand">
+        <strong>sugarcrm</strong>
+        <span>Customer Journeys</span>
+      </div>
+
+      <nav class="topbar__tabs">
+        <a routerLink="/clientes" routerLinkActive="is-active">Relationship</a>
+        <a routerLink="/oportunidades" routerLinkActive="is-active">Opportunities</a>
+        <a routerLink="/leads" routerLinkActive="is-active">Leads</a>
+        <a routerLink="/tarefas" routerLinkActive="is-active">Calendar</a>
+        <a routerLink="/relatorios" routerLinkActive="is-active">Reports</a>
+      </nav>
+
+      <div class="topbar__actions">
+        <button type="button" title="Criar"><i class="fa-solid fa-plus icon icon--small" aria-hidden="true"></i></button>
+        <button type="button" title="Pesquisar"><i class="fa-solid fa-magnifying-glass icon icon--small" aria-hidden="true"></i></button>
+        <div class="avatar">A</div>
+      </div>
+    </header>
+
+    <main class="workspace__content">
+      <router-outlet></router-outlet>
+    </main>
+  </section>
+</div>
